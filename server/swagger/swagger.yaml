@@ -1,0 +1,151 @@
+swagger: '2.0'
+info:
+  description: This is the leblum identity api
+  version: 1.0.0
+  title: Leblum Identity API
+  contact:
+    email: info@leblum.com
+basePath: 
+schemes:
+  - http
+  - https
+# will be prefixed to all paths
+tags:
+  - name: authentication
+    description: How you authenticate to the api
+  - name: registration
+    description: Registering users
+  - name: Users
+    description: Operations about user
+  - name: Roles
+    description: Operations on Roles
+  - name: Permissions
+    description: Operations on Permissions
+produces:
+  - application/json
+paths:
+  /api/v1/authenticate:
+    post:
+      description: 'The way that you authenticate to the api'
+      summary: Authentication for users
+      tags:
+      - authentication
+      operationId: authenticate
+      consumes:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: 'user credentials'
+        schema:
+        #/definitions/Pet
+          $ref: '#/definitions/authenticationRequest'
+      responses:
+        200:
+          schema:
+            $ref: "#/definitions/authenticationReponse"
+          description: 'Successfully returns a token'
+        401:
+          description: 'Authentication failure'          
+      security: []
+  /api/v1/register:
+    post:
+      description: 'Registering a new user'
+      summary: Open registration
+      tags:
+      - registration
+      operationId: register
+      consumes:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: 'user to register'
+        schema:
+          $ref: '#/definitions/registerRequest'
+      responses:
+        200:
+          schema:
+            $ref: "#/definitions/registerResponse"
+          description: 'returns a newly created user'      
+      security: []
+securityDefinitions:
+  api_key:
+    type: apiKey
+    name: x-access-token
+    in: header
+definitions:
+  authenticationRequest:
+    type: object
+    properties:
+      email:
+        description: 'The email address of the user'
+        type: string
+      password:
+        description: 'The password'
+        type: string
+    required:
+    - email
+    - password
+  authenticationReponse:
+    type: object
+    properties:
+      authenticated:
+        description: 'Whether the user was actually authenticated'
+        type: boolean
+      message:
+        description: 'Informational messagae'
+        type: string
+      expiresIn: 
+        description: 'Expiration time using hours ie: 24h'
+        type: string
+      token:
+        description: 'The token to use for all requests'
+        type: string
+  registerRequest:
+    type: object
+    properties:
+      firstName:
+        description: 'First name'
+        type: string
+      lastName:
+        description: 'last name'
+        type: string
+      email:
+        description: 'email'
+        type: string
+      password:
+        description: 'The password'
+        type: string
+    required:
+    - email
+    - password
+  registerResponse:
+    type: object
+    properties:
+      __v:
+        type: string 
+      updatedAt:
+        type: string 
+      createdAt:
+        type: string 
+      organizationId:
+        type: string 
+      firstName:
+        type: string 
+      lastName:
+        type: string 
+      email:
+        type: string 
+      password:
+        type: string 
+      _id:
+        type: string 
+      roles:
+        type: array
+      isEmailVerified:
+        type: boolean
+      isTokenExpired:
+        type: boolean

@@ -1,0 +1,23 @@
+config:
+  target: 'http://104.236.210.253'
+  phases:
+    # -
+    #   duration: 60
+    #   arrivalRate: 50
+    #   name: "Middle Phase"
+    -
+      duration: 120
+      arrivalRate: 30
+      rampTo: 30
+      name: "High load phase"
+  defaults:
+    headers:
+      x-access-token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1OTgxNzk1NTk2YzM4NDEyNmNhN2NhOTIiLCJvcmdhbml6YXRpb25JZCI6IjU5ODE3OTU0OTZjMzg0MTI2Y2E3Y2E5MCIsInJvbGVzIjpbImFkbWluIl0sImV4cGlyYXRpb24iOiIyNGgiLCJpYXQiOjE1MDE2NjA4MTAsImV4cCI6MTUwMTc0NzIxMH0.5VPLXUAap3y9dSlpdcnJs5SuNpz8vp1WYnV3ZGIpP7I'
+scenarios:
+  - flow:
+    - get:
+        url: "/api/v1/users"
+    - get:
+        url: "/api/v1/permissions"
+    - get:
+        url: "/api/v1/roles"

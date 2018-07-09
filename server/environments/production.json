@@ -1,0 +1,16 @@
+{
+    "name": "leblum.product.api",
+    "database": {
+      "mongoConnectionString": "mongodb://dbrown:password1@ds161162.mlab.com:61162/leblum-product-production"
+    },
+    "ampq":{
+        "ampqConnectionString": "amqp://wkaxkarj:NAsD1ISNCESHMmVlK9Mch6IcBjapIBYn@puma.rmq.cloudamqp.com/wkaxkarj"
+    },
+    "jwtSecretToken": "asdf97a9s8d7baodfbhoda8f7g9adf8asj",
+    "returnCallStackOnError": true,
+    "isConsoleLoggingActive": true,
+    "clientDistFolder": "prod",
+    "identityApiEndpoint": "https://identity.leblum.io/api/v1",
+    "ProductImageBucketName": "production-product-api-images",
+    "SupplierImageBucketName": "production-supplier-api-images"
+}

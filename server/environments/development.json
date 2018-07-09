@@ -1,0 +1,20 @@
+{
+    "name": "leblum.product.api",
+    "database": {
+      "mongoConnectionString": "mongodb://root:asdf897asdbr98sadf@ds129004.mlab.com:29004/leblum-product-development"
+    },
+    "ampq":{
+        "ampqConnectionString": "amqp://wkaxkarj:NAsD1ISNCESHMmVlK9Mch6IcBjapIBYn@puma.rmq.cloudamqp.com/wkaxkarj"
+    },
+    "systemUserPassword": "ads987sadgydfg76e9uhnsj8nhe9f87",
+    "jwtSecretToken": "asdf97a9s8d7baodfbhoda8f7g9adf8asj",
+    "returnCallStackOnError": true,
+    "isConsoleLoggingActive": true,
+    "mandrillApiKey": "EEQCHdKzdFHYo4VNLdb3nw", // this is the test key for right now... switch to real
+    "clientDistFolder": "dev",
+    "identityApiEndpoint": "https://dev.identity.leblum.io/api/v1",
+    // THIS DOESN"T WORK like you think for unit testing.  Remember, unit tests are run in integration.
+    //"identityApiEndpoint": "http://localhost:8080",
+    "ProductImageBucketName": "dev-product-api-images",
+    "SupplierImageBucketName": "dev-supplier-api-images"
+}

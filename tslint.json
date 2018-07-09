@@ -1,0 +1,76 @@
+{
+	"extends": "tslint:recommended",
+	"rules": {
+		"no-unused-expression": true,
+		"no-duplicate-variable": true,
+		"ordered-imports": [
+			false
+		],
+		"no-unused-variable": true,
+		"prefer-const": true, // 2.1, 13.1
+		"no-var-keyword": true, // 2.2
+		"object-literal-shorthand": true, // 3.3, 3.4
+		"object-literal-sort-keys": false,
+		"variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore", "allow-pascal-case"],
+		"curly": true,
+		"class-name": true,
+		"semicolon": [
+			"always"
+		],
+		"quotemark": [
+			true,
+			"single",
+			"jsx-double"
+		], // 6.1
+		"triple-equals": true,
+		"no-eval": true, // 6.4
+		"space-before-function-paren": [
+			true,
+			{
+				"anonymous": "always", // 7.11
+				"named": "never" // 18.3
+			}
+		],
+		"align": [
+			true,
+			"arguments",
+			"parameters"
+		], // 7.15
+		"only-arrow-functions": [
+			true
+		], // 8.1
+		"arrow-parens": true,
+		"one-variable-per-declaration": [
+			true,
+			"ignore-for-loop"
+		], // 13.2
+		"comment-format": [
+			true,
+			"check-space"
+		], // 17.3
+		"indent": [
+			true,
+			"space"
+		],
+		"whitespace": [
+			true,
+			"check-branch", // 18.3
+			"check-decl", // 18.4
+			"check-operator" // 18.4
+		],
+		"eofline": true, // 18.5
+		"trailing-comma": [
+			true,
+			{
+				"multiline": "always",
+				"singleline": "never"
+			}
+		], // 19.2
+		"radix": true, // 21.3
+		"variable-name": [
+			true,
+			"check-format" // 22.2
+		],
+		"max-line-length": [true, 180]
+	}
+}

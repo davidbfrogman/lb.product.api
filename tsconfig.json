@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "listFiles": true,
+    "module": "commonjs",
+    "target": "es6",
+    "sourceMap": true,
+    "emitDecoratorMetadata": false,
+    "experimentalDecorators": true
+  },
+  "exclude": [
+    "**/node_modules/*",
+    "typings"
+  ]
+}

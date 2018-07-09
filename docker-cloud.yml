@@ -1,0 +1,10 @@
+api:
+  autoredeploy: true
+  deployment_strategy: high_availability
+  environment:
+    - NODE_ENV=development
+  image: 'leblum/product.api:latest'
+  ports: 
+    - "8080:8080"
+  restart: always
+  target_num_containers: 3

@@ -1,0 +1,27 @@
+version: "3.2"
+services:
+  web:
+    # replace username/repo:tag with your name and image details
+    image: leblum/product.api:latest
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: "0.4"
+          memory: 200M
+      restart_policy:
+        condition: on-failure
+    ports:
+      - target: 8080
+        published: 8080
+        protocol: tcp
+        mode: ingress
+    # healthcheck:
+    #   test: ["CMD", "curl", "-f", "http://localhost:9001/healthcheck"]
+    #   interval: 10s
+    #   timeout: 10s
+    #   retries: 5
+    networks:
+      - webnet
+networks:
+  webnet:

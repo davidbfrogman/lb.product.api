@@ -1,0 +1,19 @@
+{
+    "name": "leblum.product.api",
+    "database": {
+      "mongoConnectionString": "mongodb://root:aosdf9ZDhfasiduYSED8@ds129004.mlab.com:29004/leblum-product-integration"
+    },
+    "ampq":{
+        "ampqConnectionString": "amqp://wkaxkarj:NAsD1ISNCESHMmVlK9Mch6IcBjapIBYn@puma.rmq.cloudamqp.com/wkaxkarj"
+    },
+    "systemUserPassword": "ads987sadgydfg76e9uhnsj8nhe9f87",
+    "jwtSecretToken": "asdf97a9s8d7baodfbhoda8f7g9adf8asj",
+    "returnCallStackOnError": true,
+    "isConsoleLoggingActive": true,
+    "mandrillApiKey": "Zh8DlnQXZIW5urHG7f1Llw", // Integration always uses the test mandrill key, that way we don't have to worry about our test users.
+    "clientDistFolder": "dev",
+    "identityApiEndpoint": "https://dev.identity.leblum.io/api/v1",
+    //"identityApiEndpoint": "http://localhost:8080/api/v1",
+    "ProductImageBucketName": "integration-product-api-images",
+    "SupplierImageBucketName": "integration-supplier-api-images"
+}
